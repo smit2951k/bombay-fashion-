@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bombay Fashion | Luxury Indian Wear</title>
+  <meta name="description" content="Redefining Urban Indian Fashion. Premium, elegant, and sophisticated.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar" class="navbar transparent-hero">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+        <nav class="nav-links">
+          <button onclick="navigate('home')">Home</button>
+          <button onclick="navigate('shop')">Shop</button>
+          <a href="#about" onclick="navigate('home')">About</a>
+        </nav>
+      </div>
+      <div class="nav-center">
+        <h1 class="logo" onclick="navigate('home')">Bombay Fashion</h1>
+      </div>
+      <div class="nav-right">
+        <button class="nav-icon" aria-label="Search"><i data-lucide="search"></i></button>
+        <button class="nav-icon hide-mobile" aria-label="Wishlist" id="wishlistIcon">
+          <i data-lucide="heart"></i>
+          <span class="badge hidden" id="wishlistBadge">0</span>
+        </button>
+        <button class="nav-icon" aria-label="Cart" id="cartToggle" onclick="openCart()">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge hidden" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <button onclick="navigate('home'); closeMobileMenu();">Home</button>
+    <button onclick="navigate('shop'); closeMobileMenu();">Shop</button>
+    <a href="#about" onclick="navigate('home'); closeMobileMenu();">About</a>
+  </div>
+
+  <!-- ========== CART DRAWER ========== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2 class="cart-title">Your Cart</h2>
+      <button class="cart-close" onclick="closeCart()"><i data-lucide="x"></i></button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <p class="cart-empty" id="cartEmpty">Your cart is empty.</p>
+      <div id="cartItems"></div>
+    </div>
+    <div class="cart-footer hidden" id="cartFooter">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <!-- ===== HOME PAGE ===== -->
+    <div id="page-home" class="page active">
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-bg">
+          <img src="images/hero_banner_1778051844615.png" alt="Bombay Fashion Hero">
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <h2 class="hero-title">Bombay<br><span>Fashion</span></h2>
+          <p class="hero-subtitle">Redefining Urban Indian Fashion</p>
+          <button class="hero-btn" onclick="navigate('shop')">Explore Collection</button>
+        </div>
+      </section>
+
+      <!-- New Arrivals -->
+      <section class="section" id="new-arrivals">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">New Arrivals</h2>
+              <p class="section-desc">Discover our latest collection blending traditional craftsmanship with contemporary luxury.</p>
+            </div>
+            <button class="view-all-btn" onclick="navigate('shop')">
+              View All <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+          <div class="product-grid" id="newArrivalsGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- About / Editorial -->
+      <section class="section section-dark" id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-img-wrap animate-slide-left">
+              <img src="images/editorial_about_1778051863510.png" alt="Editorial">
+              <div class="about-img-decoration"></div>
+            </div>
+            <div class="about-content animate-slide-right">
+              <h2 class="about-title">The Art of<br><span>Bombay</span></h2>
+              <p class="about-text">Bombay Fashion is more than a label; it's a movement. We blend the rich, centuries-old textile heritage of India with the sharp, clean lines of modern high fashion. Every piece is a testament to impeccable craftsmanship, designed for the discerning individual who commands the room.</p>
+              <p class="about-text">Our philosophy is rooted in bold elegance. We don't just follow trends; we define the aesthetic of the urban elite.</p>
+              <button class="about-link">
+                Read Our Story <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== SHOP PAGE ===== -->
+    <div id="page-shop" class="page">
+      <section class="section shop-section">
+        <div class="container">
+          <div class="shop-header">
+            <h1 class="shop-title">Collection</h1>
+            <p class="shop-desc">Curated pieces for the uncompromising wardrobe.</p>
+          </div>
+          <div class="filter-bar" id="filterBar">
+            <button class="filter-btn active" data-filter="All" onclick="filterProducts('All', this)">All</button>
+            <button class="filter-btn" data-filter="Dresses" onclick="filterProducts('Dresses', this)">Dresses</button>
+            <button class="filter-btn" data-filter="Sarees" onclick="filterProducts('Sarees', this)">Sarees</button>
+            <button class="filter-btn" data-filter="Lehengas" onclick="filterProducts('Lehengas', this)">Lehengas</button>
+            <button class="filter-btn" data-filter="Outerwear" onclick="filterProducts('Outerwear', this)">Outerwear</button>
+            <button class="filter-btn" data-filter="Kurtas" onclick="filterProducts('Kurtas', this)">Kurtas</button>
+          </div>
+          <div class="shop-grid" id="shopGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== PRODUCT DETAIL PAGE ===== -->
+    <div id="page-product" class="page">
+      <section class="section product-detail">
+        <div class="container">
+          <div class="breadcrumb">
+            <button onclick="navigate('home')">Home</button> /
+            <button onclick="navigate('shop')">Shop</button> /
+            <span class="current" id="breadcrumbName"></span>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-img">
+              <img id="detailImg" src="" alt="">
+            </div>
+            <div class="detail-info">
+              <h1 class="detail-name" id="detailName"></h1>
+              <p class="detail-price" id="detailPrice"></p>
+              <p class="detail-desc" id="detailDesc"></p>
+              <div>
+                <div class="size-header">
+                  <span class="size-label">Select Size</span>
+                  <button class="size-guide">Size Guide</button>
+                </div>
+                <div class="size-options" id="detailSizes"></div>
+              </div>
+              <div class="detail-actions">
+                <button class="add-to-cart-btn" id="detailAddToCart">Add to Cart</button>
+                <button class="detail-wishlist" id="detailWishlist">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="accordions">
+                <details class="accordion">
+                  <summary>
+                    <span>Details & Care</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  </summary>
+                  <p>Dry clean only. Handle with care. Crafted with premium materials for lasting elegance.</p>
+                </details>
+                <details class="accordion">
+                  <summary>
+                    <span>Shipping & Returns</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  </summary>
+                  <p>Complimentary express shipping on all orders. Returns accepted within 14 days of delivery.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-brand-name">Bombay</h3>
+          <p class="footer-brand-desc">Redefining urban Indian fashion with uncompromising quality and bold aesthetic vision.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <div class="footer-links">
+            <button onclick="navigate('shop')">New Arrivals</button>
+            <button onclick="navigate('shop')">Dresses</button>
+            <button onclick="navigate('shop')">Sarees</button>
+            <button onclick="navigate('shop')">Bridal</button>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Size Guide</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">The List</h4>
+          <p class="footer-subscribe-text">Subscribe to receive updates on exclusive releases and events.</p>
+          <div class="subscribe-form">
+            <input type="email" placeholder="Email Address">
+            <button>Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Bombay Fashion. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
