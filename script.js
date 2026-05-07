@@ -1,11 +1,11 @@
 // ===== DATA =====
 const products = [
-  { id: 1, name: "Midnight Velvet Gown", price: 55000, category: "Dresses", img: "images/product_velvet_gown_1778051880089.png", desc: "Elegant velvet gown with intricate gold zari work, perfect for evening galas. The modern silhouette meets traditional craftsmanship.", sizes: ['S', 'M', 'L'] },
-  { id: 2, name: "Ivory Silk Saree", price: 42000, category: "Sarees", img: "images/product_silk_saree_1778051895587.png", desc: "Pure silk saree with minimal modern borders. A timeless classic reimagined for the contemporary woman.", sizes: ['Free Size'] },
-  { id: 3, name: "Golden Aura Lehenga", price: 85000, category: "Lehengas", img: "images/product_gold_lehenga_1778051911288.png", desc: "Stunning bridal lehenga in gold and champagne. Features architectural motifs and structural elegance.", sizes: ['S', 'M', 'L', 'XL'] },
-  { id: 4, name: "Noir Sequin Blazer", price: 35000, category: "Outerwear", img: "images/product_sequin_blazer_1778051928075.png", desc: "Sharp tailored blazer with subtle sequin details. Exudes confidence and urban sophistication.", sizes: ['M', 'L'] },
-  { id: 5, name: "Crimson Draped Dress", price: 48000, category: "Dresses", img: "images/product_crimson_dress_1778051941275.png", desc: "Modern draped dress in striking crimson red. Designed to flatter and turn heads at any luxury event.", sizes: ['XS', 'S', 'M'] },
-  { id: 6, name: "Pearl Embroidered Kurta", price: 28000, category: "Kurtas", img: "images/product_pearl_kurta_1778051958546.png", desc: "Contemporary kurta with delicate pearl handwork. Effortlessly chic and perfectly balanced.", sizes: ['S', 'M', 'L', 'XL'] },
+  { id: 1, name: "Midnight Velvet Gown", price: 55000, category: "Dresses", img: "./product_velvet_gown_1778051880089.png", desc: "Elegant velvet gown with intricate gold zari work, perfect for evening galas. The modern silhouette meets traditional craftsmanship.", sizes: ['S', 'M', 'L'] },
+  { id: 2, name: "Ivory Silk Saree", price: 42000, category: "Sarees", img: "./product_silk_saree_1778051895587.png", desc: "Pure silk saree with minimal modern borders. A timeless classic reimagined for the contemporary woman.", sizes: ['Free Size'] },
+  { id: 3, name: "Golden Aura Lehenga", price: 85000, category: "Lehengas", img: "./product_gold_lehenga_1778051911288.png", desc: "Stunning bridal lehenga in gold and champagne. Features architectural motifs and structural elegance.", sizes: ['S', 'M', 'L', 'XL'] },
+  { id: 4, name: "Noir Sequin Blazer", price: 35000, category: "Outerwear", img: "./product_sequin_blazer_1778051928075.png", desc: "Sharp tailored blazer with subtle sequin details. Exudes confidence and urban sophistication.", sizes: ['M', 'L'] },
+  { id: 5, name: "Crimson Draped Dress", price: 48000, category: "Dresses", img: "./product_crimson_dress_1778051941275.png", desc: "Modern draped dress in striking crimson red. Designed to flatter and turn heads at any luxury event.", sizes: ['XS', 'S', 'M'] },
+  { id: 6, name: "Pearl Embroidered Kurta", price: 28000, category: "Kurtas", img: "./product_pearl_kurta_1778051958546.png", desc: "Contemporary kurta with delicate pearl handwork. Effortlessly chic and perfectly balanced.", sizes: ['S', 'M', 'L', 'XL'] },
 ];
 
 // ===== STATE =====
